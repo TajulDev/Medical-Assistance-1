@@ -1,0 +1,664 @@
+*{padding: 0;margin: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif;}
+
+h1, h2, h3, h4, h5, h6, p, ul{ margin: 0;}
+ul{padding: 0;}
+a{text-decoration: none;}
+p{font-size: 18px;line-height: 26px;}
+
+h1, h2, h3{font-weight: bold;}
+h1{font-size: 48px;line-height: 68px;}
+h2{font-size: 44px;line-height: 62px; font-weight: 600;}
+h3{font-size: 40px;line-height: 56px; margin-bottom: 20px; font-weight: 600;}
+h5{font-size: 21px;line-height: 36px;}
+
+@media screen and (max-width: 767px) {
+    h1{font-size: 40px; line-height: 60px;  text-align: center !important;}
+    h2{font-size: 36px;}
+    h3{font-size: 28px; margin-bottom: 15px; text-align: center !important;line-height: 38px;}
+    h4{text-align: center !important;}
+    p{font-weight: 300 !important; text-align: center;}
+}
+
+@media screen and (max-width: 575px) {
+    h1{font-size: 32px; line-height: 40px;}
+    h2{line-height: 40px;}
+}
+
+:root{
+    --p--white: #fff;
+    --p--black: #000;
+    --p--bgPrimary: #1f79ab;
+    --p--bgSecondary: #f5f7fa;
+    --p--textPrimary: #3d7cc9;
+    --p--textSecondary: #505257;
+    --p--orange: #ff8300;
+}
+
+.container{width: 100%;max-width: 1620px;}
+
+.section__gap{padding: 60px 0;}
+
+
+/* =====modal start here===== */
+.modal-header{
+    background: var(--p--bgPrimary);
+    color: var(--p--white);
+}
+
+.modal-header button.close__btn{
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-body{
+    padding: 40px;
+}
+
+.modal-body .col-md-6:first-child{
+    border-right: 2px dotted var(--p--textSecondary);
+}
+
+.modal-dialog p{
+    margin: 0 !important;
+}
+
+.left__title{
+    margin-bottom: 15px;
+}
+
+.left__title h4{
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.left__step h5{
+    margin-bottom: 15px;
+}
+
+.left__step .steps{
+    margin-bottom: 10px !important;
+}
+
+.left__step .steps img{
+    margin-right: 20px;
+}
+
+.left__step .steps p{
+    color: var(--p--textSecondary);
+    font-size: 18px;
+}
+
+.left__count{
+    padding: 20px;
+    background: var(--p--bgSecondary);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.left__count .count1 h3{
+    margin: 0;
+}
+
+.modal__right form input,
+.modal__right form select,
+.modal__right form button{
+    width: 100%;
+    outline: none;
+    padding: 18px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.397);
+    border-radius: 10px;
+}
+
+.modal__right form button{
+    background-color: var(--p--bgPrimary);
+    color: var(--p--white);
+}
+
+@media screen and (max-width: 767px) {
+    .modal-body{
+        padding: 15px;
+    }
+
+    .modal-body .col-md-6:first-child{
+        border: none;
+    }
+}
+
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 80% !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+/* =====modal end here===== */
+
+/*===== header section css start here===== */
+.header__section{
+    background: var(--p--bgPrimary);
+    padding: 10px 0;
+}
+
+.menu li{
+    list-style: none;
+    color: var(--p--white);
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu li:last-child {
+    margin: 0;
+}
+
+.menu > ul > li:last-child a{
+    color: var(--p--white);
+    border: 2px solid var(--p--white);
+    width: 230px;
+    display: inline-block;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    background: transparent;
+}
+
+.scrolled{
+    background: var(--p--orange);
+    border: var(--p--orange);
+    color: var(--p--white);
+}
+
+.subMenu{
+    position: absolute;
+    width: 180px;
+    background: var(--p--white);
+    padding:20px 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.subMenu li{
+    margin-bottom: 5px;
+}
+
+.subMenu li a{
+    color: var(--p--textSecondary);
+    display: block;
+}
+
+.subMenu li a:hover{
+    color: var(--p--black);
+}
+
+.menu li:hover .subMenu{
+    display: block;
+}
+
+.menu__icon{
+    font-size: 20px;
+    color: var(--p--white);
+    cursor: pointer;
+}
+
+.menu.mobile__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--p--bgPrimary);
+    height: 100vh;
+    width: 40%;
+    padding: 40px;
+    transform: scaleX(0);
+    transition: 0.5s ease-in-out;
+    transform-origin: left;
+}
+
+.mobile__menu.open{
+    transform: scaleX(1);
+}
+
+.subMenu__mobile{
+    position: relative;
+    background: unset;
+    box-shadow: unset !important;
+    color: #fff;
+}
+
+.subMenu__mobile li{
+    color: var(--p--white);
+}
+
+.subMenu__mobile{
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+
+.mobile__menu li:hover .subMenu__mobile{
+    display: block;
+}
+
+svg.cross {
+    font-size: 25px;
+    color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .menu.mobile__menu{
+        width: 50%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .menu.mobile__menu{
+        width: 100%;
+    }
+}
+/* ===== header section css end here ===== */
+
+
+/* ===== banner section css start here ===== */
+.banner__section{
+    padding: 100px 0;
+    background: transparent linear-gradient(259deg,rgba(255,191,0,.1),
+                rgba(255,191,0,.1) 35%,rgba(149,93,198,.1) 72%,
+                rgba(0,38,61,.1)) 0 0 no-repeat padding-box;
+}
+
+.banner__left h1{
+    color: var(--p--textPrimary);
+}
+
+.banner__left p{
+    margin: 15px 0 50px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    color: var(--p--textSecondary);
+}
+
+.contact__btn{
+    padding: 8px;
+    color: var(--p--white);
+    background: var(--p--textPrimary);
+    font-weight: 600;
+    height: 48px;
+}
+
+button.contact__btn{
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+}
+
+.banner__form{
+    width: 400px;
+    margin: auto;
+    background: var(--p--bgPrimary);
+    color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.banner__form h5{
+    margin-bottom: 24px;
+}
+
+.banner__form h5 span{
+    color: var(--p--orange);
+}
+
+.banner__form input, .banner__form select{
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    height: 55px;
+    border-radius: 10px;
+    color: var(--p--textSecondary);
+}
+
+.banner__form .contact__btn{
+    width: 100%;
+    background: var(--p--orange);
+}
+
+@media screen and (max-width: 575px) {
+    button.contact__btn{
+        width: 100%;
+    }
+
+    .banner__section{
+        padding: 50px 0;
+    }
+
+    .banner__left{
+        text-align: center;
+    }
+
+    .banner__form{
+        width: 100%;
+    }
+}
+/* ===== banner section css end here ===== */
+
+
+/* =====index section css start here===== */
+.index__section, #consult{
+    background: var(--p--bgPrimary);
+    color: #Fff;
+}
+
+
+.index__inner h2{
+    color: var(--p--white);
+}
+
+.all__index{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.index:hover{
+    color: var(--p--white);
+}
+
+.index{
+    width: 340px;
+    text-align: center;
+    margin-bottom: 15px;
+    background: #213f58;
+    color: var(--p--white);
+    height: 60px;
+    border-radius: 15px;
+    position: relative;
+    padding: 10px;
+}
+
+.index:last-child{
+    margin: 0;
+}
+
+.index::before{
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--p--orange);
+    border-radius: 50%;
+}
+
+.desease__img img{
+    width: 100%;
+    transform: perspective(800px) rotate3D(0,245,1,25deg);
+    border-radius: 10px;
+}
+
+.disease__desc{
+    color: var(--p--white);
+}
+
+.another__index{
+    padding: 60px 0;
+}
+
+.twin__disease {
+    padding: 25px 40px;
+    background: transparent linear-gradient(183deg,rgba(255,191,0,.1),
+    rgba(255,191,0,.1) 35%,rgba(149,93,198,.1) 72%,
+    rgba(0,38,61,.1)) 0 0 no-repeat padding-box;
+    min-height: 467px;
+    border-radius: 20px;
+}
+
+.twin__disease h4{
+    margin-bottom: 30px;
+    color: var(--p--orange);
+}
+
+.twin__disease ul{
+    padding-left: 15px;
+}
+
+.twin__disease ul li {
+    list-style: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+    color: var(--p--textSecondary);
+}
+
+.twin__disease ul li:last-child{
+    margin-bottom: 0;
+}
+
+.twin__disease ul li::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 3px;
+    background: var(--p--orange);
+    left: -11px;
+    top: 6px;
+}
+
+#diagnosis{
+    background-color: var(--p--bgSecondary);
+}
+
+.diagnosis__tab .nav-link.active{
+    background-color: var(--p--orange) !important;
+    color: var(--p--bgSecondary);
+}
+
+.diagnosis__tab .nav-link{
+    color: var(--p--orange);
+    border-radius: 10px;
+    background: var(--p--white);
+    padding: 20px;
+    font-weight: bold;
+    margin: 0 15px 15px 0;
+}
+
+.diagnosis__tab .nav.nav-tabs{
+    margin-bottom: 35px;
+}
+
+.risk__tab button.nav-link{
+    background: var(--p--bgSecondary);
+}
+
+#cost{
+    background: var(--p--bgSecondary);
+}
+
+.doc__desc{
+    margin-bottom: 30px;
+}
+
+.index__section .diseases{
+    padding-bottom: 40px;
+}
+
+.index__section .diseases:last-child{
+    padding: 0;
+}
+
+.diseases h4{
+    color: var(--p--orange)
+}
+
+#consult h4 {
+    margin: 30px 0 15px;
+}
+
+.doc__desc p{
+    margin-top: 20px;
+}
+
+.doc__desc p:last-child{
+    font-size: 16px;
+    color: var(--p--orange);
+    margin: 0;
+}
+
+.prevent__img img, .recovery__img img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.prevent__insturction p strong{
+    color: var(--p--orange);
+}
+
+#recovery p strong{
+    color: var(--p--orange);
+}
+
+.diagnosis__tab p strong{
+    color: var(--p--orange);
+}
+
+@media screen and (max-width: 1199px) {
+    .all__index{
+    grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .all__index{
+        grid-template-columns: auto;
+    }
+    .desease__img img{
+        transform: unset;
+        margin-bottom: 30px;
+    }
+
+    .index__section, .another__index{
+        padding: 50px 0;
+    }
+
+    .diagnosis__tab .nav.nav-tabs{
+        margin-bottom: 30px;
+    }
+
+    .prevent__insturction h4 {
+        margin: 30px 0 15px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .index{
+        width: 100%;
+        padding: 15px;
+    }
+}
+/* =====index section css end here===== */
+
+
+.FAQ__accordion{
+    background-color: var(--p--bgPrimary);
+}
+
+.package__title h2{
+    color: var(--p--white);
+}
+
+.accordion-button:focus{
+    box-shadow: unset !important;
+}
+
+button.accordion-button.collapsed, button.accordion-button {
+    font-size: 22px;
+    padding: 22px;
+}
+
+.accordion-item{
+    border: none;
+}
+
+button.accordion-button.collapsed{
+    background: rgb(33, 63, 88);
+    color: var(--p--white);
+    border-bottom: 1px solid #4F87A6;
+    box-shadow: unset !important;
+}
+
+
+.accordion-button::after{
+    background-color: var(--p--white);
+}
+
+.accordion-body{
+    background:#246B92 ;
+    color: var(--p--white);
+    border-bottom: 1px solid #4F87A6;
+}
+
+button.accordion-button{
+    background: #246B92 !important;
+    color: #fff !important;
+    line-height: 28px;
+}
+/* accordion */
+
+/* float section */
+.float__section{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.float__section a{
+    font-size: 24px;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.float__section a:first-child{
+    background: #25D366;
+}
+
+.float__section a:nth-child(2){
+    background: #0A66C2;
+}
+
+.float__section a:last-child{
+    background: #F94877;
+}
+
+@media screen and (max-width: 575px) {
+    .float__section{
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .float__section a{
+        font-size: 18px;
+        height: 32px;
+        width: 32px;
+        line-height: 32px;
+    }
+}
+/* float section */
